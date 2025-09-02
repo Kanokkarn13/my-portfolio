@@ -35,7 +35,6 @@ h1 .sub,.logo-title .sub{font-weight:800;font-size:.8rem;letter-spacing:.2em}
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center; /* center vertically */
   position:relative;
   overflow:hidden;
 }
