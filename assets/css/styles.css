@@ -35,6 +35,7 @@ h1 .sub,.logo-title .sub{font-weight:800;font-size:.8rem;letter-spacing:.2em}
   display:flex;
   flex-direction:column;
   align-items:center;
+  
   position:relative;
   overflow:hidden;
 }
@@ -58,6 +59,50 @@ h1 .sub,.logo-title .sub{font-weight:800;font-size:.8rem;letter-spacing:.2em}
 }
 .logo-title{font-size:clamp(2.4rem, 6vw, 5rem);line-height:.9}
 .tagline{font-size:1.2rem;max-width:40ch}
+
+/* --- Hero split with profile picture (text | photo) --- */
+.hero-inner.hero-split{
+  display:grid;
+  grid-template-columns: 1.1fr .9fr;     /* left text, right image */
+  align-items:center;
+  justify-items:start;                   /* left-align text column */
+  gap:min(5vw, 3rem);
+  max-width:1100px;
+  width:100%;
+  padding:20vh 6vw;
+}
+.hero-copy{ text-align:left; max-width:600px; }
+
+/* Profile picture card (border + offset shadow + frame bar) */
+.pfp-card{
+  position:relative;
+  width: clamp(240px, 30vw, 380px);
+  aspect-ratio: 1 / 1;                   /* square frame */
+  border-radius: var(--radius);
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 10px 10px 0 var(--ink);    /* bottom-right offset */
+  margin: 0;
+  overflow: hidden;
+}
+.pfp-card::after{
+  content:"";
+  position:absolute;
+  top:-14px;
+  right:-14px;
+  width:100%;
+  height:100%;
+  border:8px solid var(--ink);           /* thick frame bar look */
+  border-radius: var(--radius);
+  z-index:-1;
+}
+.pfp-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  filter:none !important;                 /* keep color */
+}
 
 /* Sections */
 .section{padding:6vh 6vw}
@@ -233,6 +278,13 @@ html{scroll-behavior:smooth}
   .projects .grid{grid-template-columns:1fr 1fr}
   .project-cover{max-width:100%}
   .prose{max-width:92vw}
+  .hero-inner.hero-split{
+    grid-template-columns: 1fr;       /* stack text & image */
+    justify-items:center;
+    text-align:center;
+  }
+  .hero-copy{ text-align:center; }
+  .pfp-card{ width: clamp(200px, 50vw, 320px); }
 }
 @media (max-width: 640px){
   .projects .grid{grid-template-columns:1fr}
