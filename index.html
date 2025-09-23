@@ -214,11 +214,66 @@
 <section id="certs" class="section certs full-screen">
   <div class="section-head">
     <h2 class="section-title">My <span class="script">Certifications</span></h2>
-    <p class="muted">Browse by tag or open to verify.</p>
-    <div id="certFilters"></div>
+    <p class="muted">Browse my certificates and achievements.</p>
   </div>
-  <div id="certGrid" class="grid"></div>
+
+  <div class="grid">
+    <!-- Oracle HCM -->
+    <div class="tile">
+      <img src="public/HCMcert.jpg" alt="Oracle HCM Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud HCM Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle SCM -->
+    <div class="tile">
+      <img src="public/SCMcert.jpg" alt="Oracle SCM Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud SCM Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle ERP -->
+    <div class="tile">
+      <img src="public/ERPcert.jpg" alt="Oracle ERP Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud ERP Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle CX -->
+    <div class="tile">
+      <img src="public/CXcert.jpg" alt="Oracle CX Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud CX Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Python Chatbot -->
+    <div class="tile">
+      <img src="public/PythonCert.jpg" alt="Coursera Chatbot with Python Certificate">
+      <div class="tile-body">
+        <h3>Customer Service with Python: Build a Chatbot using ChatGPT</h3>
+        <p>Issued Feb 2025 · Coursera Project Network</p>
+      </div>
+    </div>
+
+    <!-- Storytelling -->
+    <div class="tile">
+      <img src="public/Storytelling.jpg" alt="Coursera Data Storytelling Certificate">
+      <div class="tile-body">
+        <h3>Generative AI for Data Visualization and Storytelling</h3>
+        <p>Issued Feb 2025 · Coursera Instructor Network</p>
+      </div>
+    </div>
+  </div>
 </section>
+
 
   <!-- Contact -->
   <footer id="contact" class="footer">
@@ -232,6 +287,12 @@
       <p><strong>PHONE</strong><br/>063 015 3467</p>
     </div>
   </footer>
+  <!-- Lightbox for Certifications -->
+  <div id="certLightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Back">← Back</button>
+    <img id="certLightboxImg" alt="">
+  </div>
+
 
   <!-- Your existing scripts -->
   <script src="assets/js/projects.js"></script>
@@ -265,5 +326,43 @@
     });
   })();
   </script>
+  <script>
+(function(){
+  const grid = document.querySelector('#certs .grid');
+  const box  = document.getElementById('certLightbox');
+  const img  = document.getElementById('certLightboxImg');
+  const btn  = box.querySelector('.lightbox-close');
+
+  if(!grid || !box || !img || !btn) return;
+
+  function openLightbox(src, alt){
+    img.src = src;
+    img.alt = alt || 'Certificate';
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden','true');
+    img.removeAttribute('src');
+    document.body.style.overflow = '';
+  }
+
+  // Open on image click
+  grid.addEventListener('click', (e) => {
+    const pic = e.target.closest('#certs .tile img');
+    if(!pic) return;
+    openLightbox(pic.getAttribute('src'), pic.getAttribute('alt'));
+  });
+
+  // Close on Back button, backdrop click, or ESC
+  btn.addEventListener('click', closeLightbox);
+  box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+
 </body>
 </html>
