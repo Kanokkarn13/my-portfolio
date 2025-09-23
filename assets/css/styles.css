@@ -57,7 +57,10 @@ h1,h2,h3{margin:0 0 .6rem}
 .pfp-card img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* ---------- Layout helpers ---------- */
-.section{padding:6vh 6vw}
+.section{
+  /* เต็มจอแบบดูโปร: ลด padding ข้างให้กว้างขึ้น */
+  padding: clamp(56px, 8vh, 96px) clamp(12px, 4vw, 48px);
+}
 .two-col{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:start}
 .full-screen{min-height:100vh;display:flex;align-items:center}
 .main-nav{display:flex;gap:1.25rem}
@@ -65,9 +68,28 @@ h1,h2,h3{margin:0 0 .6rem}
 /* ---------- About (dark) ---------- */
 .about-dark{background:#0c0c0c;color:#f6f6f6;border-top:6px solid var(--ink);border-bottom:6px solid var(--ink)}
 .about-dark .section-title.light{color:#fff}
-.about-columns{align-items:flex-start}
 .about-copy p{color:#e7e7e7}
 .about-dark a{color:#ffd3e2;text-decoration:underline}
+
+/* >>> Full-width desktop + card under text on mobile */
+.about-dark.full-screen{min-height:100vh}
+.about-dark .two-col{
+  width:100%;
+  /* กินเต็มความกว้างจอ แต่กำหนดคอลัมน์ให้บาลานซ์ */
+  grid-template-columns: minmax(0,1fr) minmax(420px, 560px);
+  gap: clamp(24px, 4vw, 72px);
+  align-items: start;
+}
+.about-dark .col{min-width:0}
+.about-dark .about-copy{max-width:none}
+.about-dark .info-card{width:100%}
+
+/* ซ้อนเป็นคอลัมน์เดียวเมื่อจอเล็ก + การจัดลำดับให้การ์ดลงไปอยู่ “ใต้” เนื้อหา */
+@media (max-width: 1024px){
+  .about-dark .two-col{grid-template-columns:1fr}
+  .about-dark .about-copy{order:1}
+  .about-dark aside.col{order:2}
+}
 
 /* Personal Information card */
 .info-card{
@@ -85,64 +107,17 @@ h1,h2,h3{margin:0 0 .6rem}
    SKILLS — header above grid + responsive 2-up
    ========================================= */
 #skills{background:#0f0f0f;color:#111;border-top:6px solid var(--ink);border-bottom:6px solid var(--ink)}
-/* make the whole section not force 100vh on small screens */
 #skills.full-screen{min-height:auto}
-
-/* header centered and aligned to grid width */
-#skills .section-head{
-  max-width:1100px;
-  margin:0 auto 1.25rem;
-  padding:0 1rem;
-  text-align:left;               /* looks elegant with your theme */
-}
+#skills .section-head{max-width:1100px;margin:0 auto 1.25rem;padding:0 1rem;text-align:left}
 #skills .section-title{color:#fff}
 #skills .muted{color:#cfcfcf;margin:.25rem 0 0}
-
-/* two cards per row (then 1 on phones) */
-#skills .skills-wrap{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:1.2rem;
-  padding:0 1rem;
-}
-
-/* soft pink cards to match your mock */
+#skills .skills-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;padding:0 1rem}
 #skills .skill-group{
-  background:var(--pink-200);
-  color:#1a1a1a;
-  border:2px solid #0b0b0b;
-  border-radius:1.6rem;
-  padding:0;
-  box-shadow:10px 10px 0 var(--card-shadow);
-  overflow:hidden;
-  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
-}
-#skills .skill-group:hover{
-  transform:translateY(-6px);
-  box-shadow:16px 16px 0 var(--card-shadow);
-  background:var(--pink-300);
-}
-
-/* heading band on each card */
-#skills .skill-group h3{
-  margin:0;text-align:center;padding:.9rem 1.1rem;
-  font-family:'Bebas Neue',system-ui;letter-spacing:.04em;font-size:1.8rem;color:#111;
-  background:linear-gradient(180deg,var(--pink-100),var(--pink-200));
-  border-bottom:2px solid rgba(0,0,0,.12);
-}
-
-/* list items */
-#skills .skill-group ul{
-  list-style:none;margin:0;padding:1.1rem 1.1rem 1.2rem;display:grid;gap:.7rem
-}
-#skills .skill-group li{
-  display:flex;align-items:center;gap:.6rem;
-  background:#ffeaf1;border:2px solid rgba(0,0,0,.08);border-radius:1rem;
-  padding:.6rem .9rem;box-shadow:inset 0 -2px rgba(0,0,0,.05);
-  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
-}
+  background:var(--pink-200);color:#1a1a1a;border:2px solid #0b0b0b;border-radius:1.6rem;padding:0;box-shadow:10px 10px 0 var(--card-shadow);overflow:hidden;transition:transform .22s ease, box-shadow .22s ease, background .22s ease}
+#skills .skill-group:hover{transform:translateY(-6px);box-shadow:16px 16px 0 var(--card-shadow);background:var(--pink-300)}
+#skills .skill-group h3{margin:0;text-align:center;padding:.9rem 1.1rem;font-family:'Bebas Neue',system-ui;letter-spacing:.04em;font-size:1.8rem;color:#111;background:linear-gradient(180deg,var(--pink-100),var(--pink-200));border-bottom:2px solid rgba(0,0,0,.12)}
+#skills .skill-group ul{list-style:none;margin:0;padding:1.1rem 1.1rem 1.2rem;display:grid;gap:.7rem}
+#skills .skill-group li{display:flex;align-items:center;gap:.6rem;background:#ffeaf1;border:2px solid rgba(0,0,0,.08);border-radius:1rem;padding:.6rem .9rem;box-shadow:inset 0 -2px rgba(0,0,0,.05);font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace}
 #skills .skill-group li::before{content:"\2022";display:inline-block;width:1ch;color:#111;font-weight:700}
 #skills .skill-group li:hover{background:#fff2f6;border-color:rgba(0,0,0,.18)}
 
@@ -184,7 +159,6 @@ h1,h2,h3{margin:0 0 .6rem}
 .back:hover{border-bottom-color:var(--ink)}
 .project-detail{width:100%;max-width:980px;margin:0 auto;padding:4vh 6vw 8vh}
 .project-cover{max-width:900px;margin:1rem auto 1.25rem;overflow:hidden;border-radius:var(--radius);border:2px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
-.project-cover img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
 .project-detail .project-title, .project-detail h1{font-family:'Bebas Neue', system-ui;letter-spacing:.06em;font-size:clamp(2.2rem, 6vw, 3.25rem);line-height:1;text-align:center;margin:.6rem auto 1rem}
 .project-meta{display:flex;gap:.6rem 1rem;flex-wrap:wrap;justify-content:center;margin:.5rem auto 1.2rem}
 .meta-pill{padding:.35rem .6rem;border-radius:999px;border:2px solid var(--ink);background:var(--paper);font-size:.8rem;font-weight:800}
@@ -194,15 +168,18 @@ h1,h2,h3{margin:0 0 .6rem}
 .link-row .btn{box-shadow:4px 4px 0 var(--ink)}
 .link-row .btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
 
-/* ---------- Social ---------- */
-.social-row{display:flex;gap:.6rem;align-items:center;margin-top:.8rem}
-.soc{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:4px 4px 0 var(--ink);text-decoration:none;transition:.2s transform,.2s box-shadow}
-.soc:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+/* --- Social (mobile-friendly) --- */
+.social-row{display:flex;align-items:center;justify-content:flex-start;gap:.65rem;flex-wrap:wrap;margin-top:1rem}
+.soc{display:grid;place-items:center;width:clamp(36px,9.2vw,44px);height:clamp(36px,9.2vw,44px);border-radius:999px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);box-shadow:3px 3px 0 var(--ink);text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.soc:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink)}
+.soc:active{transform:translate(1.5px,1.5px);box-shadow:2px 2px 0 var(--ink)}
+.soc svg{width:clamp(16px,4.2vw,20px);height:clamp(16px,4.2vw,20px)}
+@media (max-width: 720px){
+  .hero-copy .social-row{justify-content:center;gap:.5rem}
+}
 
 /* ---------- Responsive tweaks ---------- */
-@media (max-width: 1100px){
-  .hero-inner.hero-split{padding:10vh 6vw}
-}
+@media (max-width: 1100px){.hero-inner.hero-split{padding:10vh 6vw}}
 @media (max-width: 980px){
   #skills .skills-wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
 }
@@ -220,58 +197,19 @@ h1,h2,h3{margin:0 0 .6rem}
   .section-title{font-size:2.2rem}
 }
 
-
-
 /* === Mobile hamburger nav === */
 .nav { position: relative; }
-
-/* Hidden on desktop */
 .nav-toggle{
-  display: none;
-  margin-left: auto;
-  background: #fff;
-  border: 2px solid var(--ink);
-  border-radius: .75rem;
-  width: 44px; height: 44px; padding: 0;
-  align-items: center; justify-content: center;
-  box-shadow: 4px 4px 0 var(--ink);
-}
-.nav-toggle .bar{
-  width: 22px; height: 2px; background: var(--ink);
-  display: block; margin: 3px 0;
-  transition: transform .2s ease, opacity .2s ease;
-}
-
-/* Phone / small tablet */
+  display:none;margin-left:auto;background:#fff;border:2px solid var(--ink);border-radius:.75rem;width:44px;height:44px;padding:0;align-items:center;justify-content:center;box-shadow:4px 4px 0 var(--ink)}
+.nav-toggle .bar{width:22px;height:2px;background:var(--ink);display:block;margin:3px 0;transition:transform .2s ease, opacity .2s ease}
 @media (max-width: 900px){
-  /* Show the button */
-  .nav-toggle{ display: flex; }
-
-  /* Turn the link row into a dropdown panel */
+  .nav-toggle{display:flex}
   .main-nav{
-    position: fixed;
-    top: 64px; left: 0; right: 0;
-    background: #fff;
-    border-top: 2px solid var(--ink);
-    box-shadow: 0 8px 0 var(--ink);
-    display: none;
-    flex-direction: column;
-    padding: .5rem 6vw 1rem;
-    z-index: 1000;
-  }
-  .main-nav a{
-    padding: .9rem 0;
-    font-weight: 800; color: var(--ink);
-    border-bottom: 1px dashed rgba(0,0,0,.12);
-    text-decoration: none;
-  }
-  .main-nav a:last-child{ border-bottom: 0; }
-
-  /* Open state */
-  .nav.is-open .main-nav{ display: flex; }
-
-  /* Animate hamburger into an “X” */
-  .nav.is-open .nav-toggle .bar:nth-child(1){ transform: translateY(5px) rotate(45deg); }
-  .nav.is-open .nav-toggle .bar:nth-child(2){ opacity: 0; }
-  .nav.is-open .nav-toggle .bar:nth-child(3){ transform: translateY(-5px) rotate(-45deg); }
+    position:fixed;top:64px;left:0;right:0;background:#fff;border-top:2px solid var(--ink);box-shadow:0 8px 0 var(--ink);display:none;flex-direction:column;padding:.5rem 6vw 1rem;z-index:1000}
+  .main-nav a{padding:.9rem 0;font-weight:800;color:var(--ink);border-bottom:1px dashed rgba(0,0,0,.12);text-decoration:none}
+  .main-nav a:last-child{border-bottom:0}
+  .nav.is-open .main-nav{display:flex}
+  .nav.is-open .nav-toggle .bar:nth-child(1){transform:translateY(5px) rotate(45deg)}
+  .nav.is-open .nav-toggle .bar:nth-child(2){opacity:0}
+  .nav.is-open .nav-toggle .bar:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
 }
