@@ -108,7 +108,27 @@ h1,h2,h3{margin:0 0 .6rem}
    ========================================= */
 #skills{background:#0f0f0f;color:#111;border-top:6px solid var(--ink);border-bottom:6px solid var(--ink)}
 #skills.full-screen{min-height:auto}
-#skills .section-head{max-width:1100px;margin:0 auto 1.25rem;padding:0 1rem;text-align:left}
+/* Center the Skills header ABOVE the container */
+/* === Skills: center header above grid === */
+#skills{
+  display: grid;                 /* stack children vertically */
+  row-gap: 1rem;                 /* space between header and cards */
+  justify-items: center;         /* center both header + grid */
+}
+
+#skills .section-head{
+  grid-column: 1 / -1;           /* in case it's inside a grid */
+  justify-self: center;          /* center within #skills */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 0 1.25rem;           /* spacing below header */
+  padding: 0 1rem;
+  text-align: center;
+}
+
+
+
+
 #skills .section-title{color:#fff}
 #skills .muted{color:#cfcfcf;margin:.25rem 0 0}
 #skills .skills-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.2rem;padding:0 1rem}
@@ -154,6 +174,20 @@ h1,h2,h3{margin:0 0 .6rem}
 .footer .glam{font-family:'Great Vibes', cursive; font-size:3.2rem; margin:-.4rem 0}
 
 /* ---------- Project detail pages ---------- */
+#projects{
+  display: grid;                 /* stack children vertically */
+  row-gap: 1rem;                 /* space between header and cards */
+  justify-items: center;         /* center both header + grid */
+}
+#projects .section-head{
+  grid-column: 1 / -1;           /* in case it's inside a grid */
+  justify-self: center;          /* center within #skills */
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 0 1.25rem;           /* spacing below header */
+  padding: 0 1rem;
+  text-align: center;
+}
 .sub-hero{display:flex;justify-content:space-between;align-items:center;padding:1rem 6vw;background:var(--pink-300);border-bottom:6px solid var(--ink);gap:1rem;min-height:56px}
 .back{font-weight:800;color:var(--ink);text-decoration:none;border-bottom:2px solid transparent}
 .back:hover{border-bottom-color:var(--ink)}
@@ -212,4 +246,55 @@ h1,h2,h3{margin:0 0 .6rem}
   .nav.is-open .nav-toggle .bar:nth-child(1){transform:translateY(5px) rotate(45deg)}
   .nav.is-open .nav-toggle .bar:nth-child(2){opacity:0}
   .nav.is-open .nav-toggle .bar:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+}
+
+/* === Software grid: better mobile + tablet layout === */
+
+/* iPad / tablet view (portrait & landscape) */
+@media (max-width: 1024px){
+  #skills .tool-grid{
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns on tablet */
+    gap: 1rem;
+  }
+  #skills .tool-card{
+    justify-content: center;
+    padding: .6rem .7rem;
+  }
+  #skills .tool-card img{
+    height: clamp(18px, 3.5vw, 22px);
+  }
+  #skills .tool-card span{
+    font-size: .95rem;
+    white-space: normal;   /* allow wrapping */
+    text-align: center;
+  }
+}
+
+/* Mobile view (phones) */
+@media (max-width: 720px){
+  #skills .tool-grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns */
+    gap: .75rem;
+  }
+  #skills .tool-card{
+    justify-content: center;
+    padding: .55rem .6rem;
+  }
+  #skills .tool-card img{
+    height: clamp(16px, 5.2vw, 20px);
+  }
+  #skills .tool-card span{
+    font-size: .9rem;
+    line-height: 1.15;
+    white-space: normal;
+    text-align: center;
+  }
+}
+
+/* Extra small screens (narrow phones) */
+@media (max-width: 480px){
+  #skills .tool-card{
+    flex-direction: column; /* stack icon above label */
+    gap: .35rem;
+  }
 }
