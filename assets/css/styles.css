@@ -219,3 +219,59 @@ h1,h2,h3{margin:0 0 .6rem}
   .projects .grid{grid-template-columns:1fr}
   .section-title{font-size:2.2rem}
 }
+
+
+
+/* === Mobile hamburger nav === */
+.nav { position: relative; }
+
+/* Hidden on desktop */
+.nav-toggle{
+  display: none;
+  margin-left: auto;
+  background: #fff;
+  border: 2px solid var(--ink);
+  border-radius: .75rem;
+  width: 44px; height: 44px; padding: 0;
+  align-items: center; justify-content: center;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.nav-toggle .bar{
+  width: 22px; height: 2px; background: var(--ink);
+  display: block; margin: 3px 0;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* Phone / small tablet */
+@media (max-width: 900px){
+  /* Show the button */
+  .nav-toggle{ display: flex; }
+
+  /* Turn the link row into a dropdown panel */
+  .main-nav{
+    position: fixed;
+    top: 64px; left: 0; right: 0;
+    background: #fff;
+    border-top: 2px solid var(--ink);
+    box-shadow: 0 8px 0 var(--ink);
+    display: none;
+    flex-direction: column;
+    padding: .5rem 6vw 1rem;
+    z-index: 1000;
+  }
+  .main-nav a{
+    padding: .9rem 0;
+    font-weight: 800; color: var(--ink);
+    border-bottom: 1px dashed rgba(0,0,0,.12);
+    text-decoration: none;
+  }
+  .main-nav a:last-child{ border-bottom: 0; }
+
+  /* Open state */
+  .nav.is-open .main-nav{ display: flex; }
+
+  /* Animate hamburger into an “X” */
+  .nav.is-open .nav-toggle .bar:nth-child(1){ transform: translateY(5px) rotate(45deg); }
+  .nav.is-open .nav-toggle .bar:nth-child(2){ opacity: 0; }
+  .nav.is-open .nav-toggle .bar:nth-child(3){ transform: translateY(-5px) rotate(-45deg); }
+}
