@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="stylesheet" href="assets/css/custom.css"/>
 </head>
 <body>
 <!-- Hero / Header -->
@@ -17,7 +18,9 @@
     <nav class="main-nav" role="navigation" aria-label="Main">
       <a href="#home">Home</a>
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -50,15 +53,12 @@
 
     <!-- Profile picture card -->
     <figure class="pfp-card">
-      <!-- replace with your portrait -->
       <img src="public/buki.jpg" alt="Kanokkarn Muangjun pfp">
     </figure>
   </div>
 </header>
 
-
-  
-  <!-- About + Skills  -->
+  <!-- About -->
   <section id="about" class="section about-dark full-screen">
     <div class="two-col about-columns">
       <div class="col about-copy">
@@ -71,35 +71,126 @@
           I enjoy learning how to analyze data, build models, and use coding to solve problems.  
           I’m still gaining experience, but I’m motivated to keep improving my skills and grow in this career path.
         </p>
-
-
       </div>
-      <div class="col about-skills">
-        <h3 class="panel-title">Skills <span class="script">&amp; Technologies</span></h3>
-        <article class="skill-group">
-          <h4>Programming</h4>
-          <ul class="chips">
-            <li>Python</li><li>SQL</li><li>JavaScript</li><li>Java</li>
-          </ul>
-        </article>
-        <article class="skill-group">
-          <h4>Data Science</h4>
-          <ul class="chips">
-            <li>Pandas</li><li>NumPy</li><li>Scikit-learn</li><li>TensorFlow</li><li>PyTorch</li>
-          </ul>
-        </article>
-        <article class="skill-group">
-          <h4>Tools &amp; Platforms</h4>
-          <ul class="chips">
-            <li>Jupyter</li><li>Git</li><li>Docker</li><li>Google Cloud</li><li>AWS</li>
-          </ul>
-        </article>
-      </div>
+
+      <!-- Personal Info Card -->
+      <aside class="col">
+        <div class="info-card" role="region" aria-labelledby="pi-title">
+          <h3 id="pi-title" class="panel-title">Personal <span class="script">Information</span></h3>
+          <dl class="info-list">
+            <div class="row"><dt>Name:</dt><dd>Kanokkarn Muangjun</dd></div>
+            <div class="row"><dt>Birthdate:</dt><dd>24 August 2003</dd></div>
+            <div class="row"><dt>Location:</dt><dd>Bangkok, Thailand</dd></div>
+            <div class="row"><dt>Hobbies:</dt><dd>Crochet</dd></div>
+          </dl>
+        </div>
+      </aside>
     </div>
   </section>
 
+  <!-- Skills -->
+  <section id="skills" class="section skills full-screen">
+    <div class="section-head">
+      <h2 class="section-title">My <span class="script">Skills</span></h2>
+      <p class="muted">Technical and soft skills I use.</p>
+    </div>
+    <div class="skills-wrap">
+      <article class="skill-group">
+        <h3>Hard Skills</h3>
+        <ul>
+          <li>Analyze data</li>
+          <li>Develop and deploy ML models</li>
+          <li>Design databases</li>
+          <li>Program in Python & SQL</li>
+        </ul>
+      </article>
+      <article class="skill-group">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Collaborate in teams</li>
+          <li>Manage time effectively</li>
+          <li>Take responsibility</li>
+          <li>Work well under pressure</li>
+          <li>Solve problems</li>
+          <li>Apply critical thinking</li>
+        </ul>
+      </article>
+
+      <!-- Software with Wikimedia logos -->
+  <!-- Software with Wikimedia logos -->
+    <article class="skill-group">
+      <h3>Software</h3>
+      <div class="tool-grid" aria-label="Software and tools">
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Jupyter">
+          <span>Jupyter</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab">
+          <span>Colab</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+          <span>Power BI</span>
+        </div>
+
+        <!-- Excel (inline SVG) -->
+        <div class="tool-card">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+              role="img" aria-label="Microsoft Excel"
+              style="height: var(--tool-ico); width: auto;">
+            <title>Microsoft Excel</title>
+            <path fill="#169154" d="M29,6H15.744C14.781,6,14,6.781,14,7.744v7.259h15V6z"></path>
+            <path fill="#18482a" d="M14,33.054v7.202C14,41.219,14.781,42,15.743,42H29v-8.946H14z"></path>
+            <path fill="#0c8045" d="M14 15.003H29V24.005000000000003H14z"></path>
+            <path fill="#17472a" d="M14 24.005H29V33.055H14z"></path>
+            <g>
+              <path fill="#29c27f" d="M42.256,6H29v9.003h15V7.744C44,6.781,43.219,6,42.256,6z"></path>
+              <path fill="#27663f" d="M29,33.054V42h13.257C43.219,42,44,41.219,44,40.257v-7.202H29z"></path>
+              <path fill="#19ac65" d="M29 15.003H44V24.005000000000003H29z"></path>
+              <path fill="#129652" d="M29 24.005H44V33.055H29z"></path>
+            </g>
+            <path fill="#0c7238" d="M22.319,34H5.681C4.753,34,4,33.247,4,32.319V15.681C4,14.753,4.753,14,5.681,14h16.638 C23.247,14,24,14.753,24,15.681v16.638C24,33.247,23.247,34,22.319,34z"></path>
+            <path fill="#fff" d="M9.807 19L12.193 19 14.129 22.754 16.175 19 18.404 19 15.333 24 18.474 29 16.123 29 14.013 25.07 11.912 29 9.526 29 12.719 23.982z"></path>
+          </svg>
+          <span>Excel</span>
+        </div>
+
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg" alt="MySQL">
+          <span>MySQL</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/TensorFlow_logo.svg" alt="TensorFlow">
+          <span>TensorFlow</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" alt="PyTorch">
+          <span>PyTorch</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git">
+          <span>Git</span>
+        </div>
+        <div class="tool-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services">
+          <span>AWS</span>
+        </div>
+      </div>
+    </article>
 
 
+
+      <article class="skill-group">
+        <h3>Languages</h3>
+        <ul>
+          <li>Thai: Native</li>
+          <li>English: Intermediate</li>
+          <li>Chinese: Basic</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
 <!-- Projects -->
 <section id="projects" class="section projects full-screen">
@@ -110,7 +201,16 @@
   <div id="projectGrid" class="grid"></div>
 </section>
 
-  
+<!-- Certifications -->
+<section id="certs" class="section certs full-screen">
+  <div class="section-head">
+    <h2 class="section-title">My <span class="script">Certifications</span></h2>
+    <p class="muted">Browse by tag or open to verify.</p>
+    <div id="certFilters"></div>
+  </div>
+  <div id="certGrid" class="grid"></div>
+</section>
+
   <!-- Contact -->
   <footer id="contact" class="footer">
     <div class="cta">
@@ -127,6 +227,7 @@
   </footer>
 
   <script src="assets/js/projects.js"></script>
+  <script src="assets/js/certs.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
