@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
         title: "PawPal Chatbot",
         role: "AI/ML • Chatbot",
         year: "2025",
-        cover: "/img2.png",
+        cover: "/my-portfolio/img2.png",
         tags: ["Python", "Transformers", "LoRA", "Unsloth", "Flask", "React", "Google Colab"],
         summary:
             "An AI-powered chatbot that provides preliminary pet symptom assessments and veterinary guidance. Fine-tuned with DeepSeek-R1 and Distill-Qwen models using Unsloth and PEFT (LoRA).",
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
         title: "Carbon Footprint Tracker App",
         role: "Full-stack • Mobile",
         year: "2025",
-        cover: "/carbon/hero.png",
+        cover: "/my-portfolio/carbon/hero.png",
         tags: ["TypeScript", "React Native (Expo)", "Node.js", "Express.js", "MySQL", "AWS"],
         summary:
             "Developed a full-stack mobile application to promote carbon reduction activities. Enables users to track emissions, set goals, earn rewards, and learn about climate responsibility.",

@@ -24,7 +24,7 @@ export default function CarbonProject({ project }: Props) {
                     Carbon offset App
                 </h1>
                 <img
-                    src="/carbon/hero.png"
+                    src="/my-portfolio/carbon/hero.png"
                     alt="Carbon App Screens"
                     style={{ maxWidth: '100%', height: 'auto', maxHeight: '500px' }}
                 />
@@ -43,7 +43,7 @@ export default function CarbonProject({ project }: Props) {
             }}>
                 <div style={{ flex: '1 1 300px', textAlign: 'center' }}>
                     <img
-                        src="/carbon/overview.png"
+                        src="/my-portfolio/carbon/overview.png"
                         alt="Project Overview"
                         style={{ maxWidth: '100%', height: 'auto', maxHeight: '500px' }}
                     />
@@ -108,7 +108,7 @@ export default function CarbonProject({ project }: Props) {
                             padding: '12px' // Bezel thickness
                         }}>
                             <img
-                                src="/carbon/card-front.png"
+                                src="/my-portfolio/carbon/card-front.png"
                                 alt="My Role Front"
                                 style={{
                                     width: '100%',
@@ -138,7 +138,7 @@ export default function CarbonProject({ project }: Props) {
                             padding: '1rem'
                         }}>
                             <img
-                                src="/carbon/card-back.png"
+                                src="/my-portfolio/carbon/card-back.png"
                                 alt="My Role Back Code"
                                 style={{ width: '100%', height: 'auto', maxHeight: '100%', objectFit: 'contain' }}
                             />
@@ -171,7 +171,7 @@ export default function CarbonProject({ project }: Props) {
                     ].map((num, i) => (
                         <img
                             key={i}
-                            src={`/carbon/screenshots/${num}.png`}
+                            src={`/my-portfolio/carbon/screenshots/${num}.png`}
                             alt={`Screenshot ${num}`}
                             style={{
                                 height: '400px',
@@ -186,7 +186,7 @@ export default function CarbonProject({ project }: Props) {
                 {/* Hand Image Overlay */}
                 <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
                     <img
-                        src="/carbon/hand.png"
+                        src="/my-portfolio/carbon/hand.png"
                         alt="App in hand"
                         style={{ maxWidth: '100%', height: 'auto', maxHeight: '600px', filter: 'drop-shadow(0 20px 50px rgba(0,0,0,0.3))' }}
                     />
