@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kanokkarn — Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css"/>
+  <link rel="stylesheet" href="assets/css/custom.css"/>
+</head>
+<body>
+<!-- Hero / Header -->
+<header id="home" class="hero full-screen">
+  <div class="nav">
+    <a href="#home" class="brand">KANOKKARN</a>
+
+    <!-- Hamburger button (hidden on desktop via CSS) -->
+    <button class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="mainNav"
+            aria-label="Open menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+
+    <!-- Main navigation -->
+    <nav id="mainNav" class="main-nav" role="navigation" aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+
+  <!-- split: text | photo -->
+  <div class="hero-inner hero-split">
+    <div class="hero-copy">
+      <h1 class="logo-title">
+        <span class="block">KANOKKARN</span>
+        <span class="script">Muangjun</span><br/>
+        <span class="sub">DATA • DEVELOPMENT</span>
+      </h1>
+
+      <p class="tagline">Transform <span class="script">numbers</span> — into knowledge.</p>
+
+      <a href="#projects" class="btn primary">See my work</a>
+
+      <div class="social-row" aria-label="Social links">
+        <a class="soc" href="mailto:kanokkarnmuangjun@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"/></svg>
+        </a>
+        <a class="soc" href="https://github.com/kanokkarn13" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.68c-2.78.61-3.37-1.2-3.37-1.2-.46-1.16-1.12-1.47-1.12-1.47-.92-.62.07-.6.07-.6 1.02.07 1.55 1.05 1.55 1.05.9 1.54 2.36 1.1 2.94.84.09-.66.35-1.1.63-1.35-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 7.5c.85 0 1.7.12 2.5.34 1.9-1.3 2.74-1.03 2.74-1.03.56 1.37.21 2.39.11 2.64.64.7 1.03 1.58 1.03 2.69 0 3.85-2.34 4.7-4.57 4.95.36.32.68.94.68 1.9v2.82c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/></svg>
+        </a>
+        <a class="soc" href="#" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5H4.5V23H.5zM8.5 8.5h3.8v2h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-6.5c0-1.55-.03-3.55-2.17-3.55-2.17 0-2.5 1.7-2.5 3.45V23h-3.93z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Profile picture card -->
+    <figure class="pfp-card">
+      <img src="public/buki.jpg" alt="Kanokkarn Muangjun pfp">
+    </figure>
+  </div>
+</header>
+
+  <!-- About -->
+  <section id="about" class="section about-dark full-screen">
+    <div class="two-col about-columns">
+      <div class="col about-copy">
+        <h2 class="section-title light">About <span class="script">Me</span></h2>
+        <p>
+          Hi! I’m <strong>Kanokkarn</strong> (bew) — a Computer Science student at Bangkok University.  
+          I’m interested in working in the data field and my goal is to become a <em>Data Scientist</em>.
+        </p>
+        <p>
+          I enjoy learning how to analyze data, build models, and use coding to solve problems.  
+          I’m still gaining experience, but I’m motivated to keep improving my skills and grow in this career path.
+        </p>
+      </div>
+
+      <!-- Personal Info Card -->
+      <aside class="col">
+        <div class="info-card" role="region" aria-labelledby="pi-title">
+          <h3 id="pi-title" class="panel-title">Personal <span class="script">Information</span></h3>
+          <dl class="info-list">
+            <div class="row"><dt>Name:</dt><dd>Kanokkarn Muangjun</dd></div>
+            <div class="row"><dt>Birthdate:</dt><dd>24 August 2003</dd></div>
+            <div class="row"><dt>Location:</dt><dd>Bangkok, Thailand</dd></div>
+            <div class="row"><dt>Hobbies:</dt><dd>Crochet</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section skills full-screen">
+    <div class="section-head">
+      <h2 class="section-title">My <span class="script">Skills</span></h2>
+      <p class="muted">Technical and soft skills I use.</p>
+    </div>
+    <div class="skills-wrap">
+      <article class="skill-group">
+        <h3>Hard Skills</h3>
+        <ul>
+          <li>Analyze data</li>
+          <li>Develop and deploy ML models</li>
+          <li>Design databases</li>
+          <li>Program in Python & SQL</li>
+        </ul>
+      </article>
+      <article class="skill-group">
+        <h3>Soft Skills</h3>
+        <ul>
+          <li>Collaborate in teams</li>
+          <li>Manage time effectively</li>
+          <li>Take responsibility</li>
+          <li>Work well under pressure</li>
+          <li>Solve problems</li>
+          <li>Apply critical thinking</li>
+        </ul>
+      </article>
+
+      <!-- Software with Wikimedia logos -->
+      <article class="skill-group">
+        <h3>Software</h3>
+        <div class="tool-grid" aria-label="Software and tools">
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Jupyter_logo.svg" alt="Jupyter">
+            <span>Jupyter</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Colaboratory_SVG_Logo.svg" alt="Google Colab">
+            <span>Colab</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+            <span>Power BI</span>
+          </div>
+
+          <!-- Excel (inline SVG) -->
+          <div class="tool-card">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                role="img" aria-label="Microsoft Excel"
+                style="height: var(--tool-ico); width: auto;">
+              <title>Microsoft Excel</title>
+              <path fill="#169154" d="M29,6H15.744C14.781,6,14,6.781,14,7.744v7.259h15V6z"></path>
+              <path fill="#18482a" d="M14,33.054v7.202C14,41.219,14.781,42,15.743,42H29v-8.946H14z"></path>
+              <path fill="#0c8045" d="M14 15.003H29V24.005000000000003H14z"></path>
+              <path fill="#17472a" d="M14 24.005H29V33.055H14z"></path>
+              <g>
+                <path fill="#29c27f" d="M42.256,6H29v9.003h15V7.744C44,6.781,43.219,6,42.256,6z"></path>
+                <path fill="#27663f" d="M29,33.054V42h13.257C43.219,42,44,41.219,44,40.257v-7.202H29z"></path>
+                <path fill="#19ac65" d="M29 15.003H44V24.005000000000003H29z"></path>
+                <path fill="#129652" d="M29 24.005H44V33.055H29z"></path>
+              </g>
+              <path fill="#0c7238" d="M22.319,34H5.681C4.753,34,4,33.247,4,32.319V15.681C4,14.753,4.753,14,5.681,14h16.638 C23.247,14,24,14.753,24,15.681v16.638C24,33.247,23.247,34,22.319,34z"></path>
+              <path fill="#fff" d="M9.807 19L12.193 19 14.129 22.754 16.175 19 18.404 19 15.333 24 18.474 29 16.123 29 14.013 25.07 11.912 29 9.526 29 12.719 23.982z"></path>
+            </svg>
+            <span>Excel</span>
+          </div>
+
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Database-mysql.svg" alt="MySQL">
+            <span>MySQL</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/TensorFlow_logo.svg" alt="TensorFlow">
+            <span>TensorFlow</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" alt="PyTorch">
+            <span>PyTorch</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Git-logo.svg" alt="Git">
+            <span>Git</span>
+          </div>
+          <div class="tool-card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services">
+            <span>AWS</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="skill-group">
+        <h3>Languages</h3>
+        <ul>
+          <li>Thai: Native</li>
+          <li>English: Intermediate</li>
+          <li>Chinese: Basic</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+<!-- Projects -->
+<!-- Projects -->
+<section id="projects" class="section projects full-screen">
+  <div class="section-head">
+    <h2 class="section-title">My <span class="script">Work</span></h2>
+    <p class="muted">Click any project to view details.</p>
+  </div>
+  <div class="grid">
+    <!-- Project card 1 -->
+    <div class="tile">
+      <img src="public/saving.jpg" alt="Saving Account Project">
+      <div class="tile-body">
+        <h3>Saving Account Analysis</h3>
+        <p>Developed a classification pipeline to analyze customer behavior related to savings account openings. Used XGBoost with other ML models, applied SMOTE for class imbalance, and tuned via GridSearchCV. Evaluated using accuracy and F1-score.</p>
+        <a href="project1.html" class="btn small">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Project card 2 -->
+    <div class="tile">
+      <img src="public/chatbot.jpg" alt="Chatbot Project">
+      <div class="tile-body">
+        <h3>Customer Chatbot</h3>
+        <p>An AI-powered chatbot that provides preliminary pet symptom assessments and veterinary guidance. Fine-tuned with DeepSeek-R1 and Distill-Qwen models using Unsloth and PEFT (LoRA).</p>
+        <a href="project2.html" class="btn small">Read More →</a>
+      </div>
+    </div>
+
+    <!-- Project card 3 -->
+    <div class="tile">
+      <img src="public/img5.png" alt="Carbon Project">
+      <div class="tile-body">
+        <h3>Carbon Footprint Tracker App</h3>
+        <p>Developed a full-stack mobile application to promote carbon reduction activities. Enables users to track emissions, set goals, earn rewards, and learn about climate responsibility.</p>
+        <a href="project3.html" class="btn small">Read More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Certifications -->
+<section id="certs" class="section certs full-screen">
+  <div class="section-head">
+    <h2 class="section-title">My <span class="script">Certifications</span></h2>
+    <p class="muted">Browse my certificates and achievements.</p>
+  </div>
+
+  <div class="grid">
+    <!-- Oracle HCM -->
+    <div class="tile">
+      <img src="public/HCMcert.jpg" alt="Oracle HCM Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud HCM Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle SCM -->
+    <div class="tile">
+      <img src="public/SCMcert.jpg" alt="Oracle SCM Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud SCM Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle ERP -->
+    <div class="tile">
+      <img src="public/ERPcert.jpg" alt="Oracle ERP Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud ERP Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Oracle CX -->
+    <div class="tile">
+      <img src="public/CXcert.jpg" alt="Oracle CX Foundations Certificate">
+      <div class="tile-body">
+        <h3>Oracle Fusion Cloud CX Foundations Associate</h3>
+        <p>Issued May 2025 · Oracle University</p>
+      </div>
+    </div>
+
+    <!-- Python Chatbot -->
+    <div class="tile">
+      <img src="public/PythonCert.jpg" alt="Coursera Chatbot with Python Certificate">
+      <div class="tile-body">
+        <h3>Customer Service with Python: Build a Chatbot using ChatGPT</h3>
+        <p>Issued Feb 2025 · Coursera Project Network</p>
+      </div>
+    </div>
+
+    <!-- Storytelling -->
+    <div class="tile">
+      <img src="public/Storytelling.jpg" alt="Coursera Data Storytelling Certificate">
+      <div class="tile-body">
+        <h3>Generative AI for Data Visualization and Storytelling</h3>
+        <p>Issued Feb 2025 · Coursera Instructor Network</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <footer id="contact" class="footer">
+    <div class="cta">
+      <p class="eyebrow">Get</p>
+      <h3 class="glam">In</h3>
+      <p class="eyebrow">Touch</p>
+    </div>
+    <div class="contact-box">
+      <p><strong>EMAIL</strong><br/><a href="mailto:kanokkarnmuangjun@gmail.com">kanokkarnmuangjun@gmail.com</a></p>
+      <p><strong>PHONE</strong><br/>063 015 3467</p>
+    </div>
+  </footer>
+  <!-- Lightbox for Certifications -->
+  <div id="certLightbox" class="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Back">← Back</button>
+    <img id="certLightboxImg" alt="">
+  </div>
+
+
+  <!-- Your existing scripts -->
+  <script src="assets/js/projects.js"></script>
+  <script src="assets/js/certs.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Mobile nav toggle (no CSS here; styles live in custom.css) -->
+  <script>
+  (function(){
+    const toggle = document.querySelector('.nav-toggle');
+    const navWrap = document.querySelector('.nav');
+    const menu = document.getElementById('mainNav');
+    if(!toggle || !navWrap || !menu) return;
+
+    function closeMenu(){
+      navWrap.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded','false');
+    }
+
+    toggle.addEventListener('click', () => {
+      const open = navWrap.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    // Close when a link is clicked or Esc is pressed
+    menu.addEventListener('click', e => {
+      if(e.target.matches('a')) closeMenu();
+    });
+    document.addEventListener('keyup', e => {
+      if(e.key === 'Escape') closeMenu();
+    });
+  })();
+  </script>
+  <script>
+(function(){
+  const grid = document.querySelector('#certs .grid');
+  const box  = document.getElementById('certLightbox');
+  const img  = document.getElementById('certLightboxImg');
+  const btn  = box.querySelector('.lightbox-close');
+
+  if(!grid || !box || !img || !btn) return;
+
+  function openLightbox(src, alt){
+    img.src = src;
+    img.alt = alt || 'Certificate';
+    box.classList.add('is-open');
+    box.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox(){
+    box.classList.remove('is-open');
+    box.setAttribute('aria-hidden','true');
+    img.removeAttribute('src');
+    document.body.style.overflow = '';
+  }
+
+  // Open on image click
+  grid.addEventListener('click', (e) => {
+    const pic = e.target.closest('#certs .tile img');
+    if(!pic) return;
+    openLightbox(pic.getAttribute('src'), pic.getAttribute('alt'));
+  });
+
+  // Close on Back button, backdrop click, or ESC
+  btn.addEventListener('click', closeLightbox);
+  box.addEventListener('click', (e) => { if(e.target === box) closeLightbox(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeLightbox(); });
+})();
+</script>
+
+</body>
+</html>

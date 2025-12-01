@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Customer Subscription — EDA & Preprocessing</title>
+  <link rel="stylesheet" href="assets/css/project.css" />
+</head>
+<body>
+<div class="wrap">
+  <h1>Customer Subscription — EDA & Preprocessing</h1>
+  <p class="lead">
+    Here’s the full workflow I followed for the bank subscription project. I start with an overview of the data,
+    check distributions, remove outliers, encode categories, fix class imbalance with SMOTE, and finally evaluate the model.
+    Each picture below is from my notebook, with a short, simple explanation.
+  </p>
+
+  <!-- ===== STEP 1: DATA OVERVIEW (FIXED) ===== -->
+    <section class="section">
+    <header>
+        <span class="badge">Step 1</span>
+        <h2>Data Overview</h2>
+        <p class="lead">Look at the dataset before and after basic cleaning to understand columns and values.</p>
+    </header>
+    <div class="grid">
+        <figure>
+        <img loading="lazy" src="public/overview1.png" alt="Schema and sample rows before cleaning" />
+        <figcaption><b>Before cleaning:</b> I check column types, sample rows, and summary statistics to spot issues and plan the next steps.</figcaption>
+        </figure>
+        <figure>
+        <img loading="lazy" src="public/overview2.png" alt="Schema and sample rows after cleaning" />
+        <figcaption><b>After cleaning:</b> The schema is consistent and ready for analysis. “Unknown” remains as a category instead of being treated as missing.</figcaption>
+        </figure>
+    </div>
+    </section>
+
+
+  <!-- ===== STEP 2: CATEGORY DISTRIBUTIONS ===== -->
+  <section class="section">
+    <header>
+      <span class="badge">Step 2</span>
+      <h2>Category Distributions</h2>
+      <p class="lead">Bar charts help me see which categories dominate and whether any labels look suspicious.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="public/Countplot.png" alt="Countplots of categorical features" />
+        <figcaption><b>Counts:</b> Some jobs are much more common; the contact approach is mainly mobile/landline; several columns include an “unknown” value.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/Histogram.png" alt="Histograms of numeric features" />
+        <figcaption><b>Numeric distributions:</b> <code>age</code> is mostly 25–50; time-based features are skewed; the target is imbalanced (few 1s).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== STEP 3: OUTLIERS ===== -->
+  <section class="section">
+    <header>
+      <span class="badge">Step 3</span>
+      <h2>Outliers & Trimming (IQR)</h2>
+      <p class="lead">I remove extreme values using the IQR rule so the model isn’t distorted by rare, unrealistic points.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="public/output-Boxplot-before.png" alt="Boxplots before removing outliers" />
+        <figcaption><b>Before:</b> Long whiskers show outliers in <code>age</code> and timing features. These can hurt training.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/output-Boxplot-after.png" alt="Boxplots after removing outliers" />
+        <figcaption><b>After:</b> Distributions are tighter and more stable after trimming by <code>[Q1 − 1.5×IQR, Q3 + 1.5×IQR]</code>.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== STEP 4: CLASS IMBALANCE & SMOTE ===== -->
+  <section class="section">
+    <header>
+      <span class="badge">Step 4</span>
+      <h2>Fix Class Imbalance (SMOTE)</h2>
+      <p class="lead">The target class is highly imbalanced. I use SMOTE to synthesize minority examples and balance the classes.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="public/before-SMOTE.png" alt="Target distribution before SMOTE" />
+        <figcaption><b>Before SMOTE:</b> Very few positive labels (1). Training on this would bias the model toward predicting 0.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/after-SMOTE.png" alt="Target distribution after SMOTE" />
+        <figcaption><b>After SMOTE:</b> Balanced classes make metrics like F1/ROC-AUC more meaningful.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== STEP 5: MODEL PERFORMANCE ===== -->
+  <section class="section">
+    <header>
+      <span class="badge">Step 5</span>
+      <h2>Model Performance</h2>
+      <p class="lead">I evaluate predictions using F1 score, confusion matrix, and an overall performance summary.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="public/f1.png" alt="F1 score result" />
+        <figcaption><b>F1 score:</b> Balancing the dataset improves harmonic mean of precision and recall — a good fit for imbalanced problems.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/Confusion-Matrix.png" alt="Confusion matrix" />
+        <figcaption><b>Confusion matrix:</b> Shows true/false positives and negatives. I aim to reduce false negatives (missed subscribers).</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/Model-Performance-Chart.png" alt="Model performance chart (accuracy/roc/etc.)" />
+        <figcaption><b>Performance summary:</b> Overall metrics across models. (If you prefer, I can swap this for ROC/PR curves.)</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== STEP 6: FEATURE IMPORTANCE ===== -->
+  <section class="section">
+    <header>
+      <span class="badge">Step 6</span>
+      <h2>Feature Importance</h2>
+      <p class="lead">Which variables drove the predictions the most.</p>
+    </header>
+    <div class="grid">
+      <figure>
+        <img loading="lazy" src="public/Feature-Importance.png" alt="Feature importance (baseline)" />
+        <figcaption><b>Before tuning:</b> Baseline ranking of features that influence the subscription prediction.</figcaption>
+      </figure>
+      <figure>
+        <img loading="lazy" src="public/Feature-Importance-after.png" alt="Feature importance after training/tuning" />
+        <figcaption><b>After tuning:</b> Updated importances after the final model — useful for business insights.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+
+
+  <!-- ===== CODE SNIPPET (optional) ===== -->
+  <section class="vscode" aria-label="Code viewer">
+    <div class="titlebar">
+      <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+      <div class="tabbar">
+        <div class="tab active">pipeline.py <span class="lang">Python</span></div>
+      </div>
+    </div>
+    <div class="codewrap">
+      <button class="copy" data-target="#code">Copy</button>
+      <pre id="code"><code>
+<span class="cm"># Encode → SMOTE → Split</span>
+X = df.drop(columns=[<span class="st">'minutes'</span>, <span class="st">'subscription'</span>], errors=<span class="st">'ignore'</span>)
+y = df[<span class="st">'subscription'</span>].astype(int)
+X_enc = pd.get_dummies(X, drop_first=<span class="kw">True</span>)
+
+smote = SMOTE(random_state=<span class="nu">42</span>)
+X_res, y_res = smote.fit_resample(X_enc, y)
+X_tr, X_te, y_tr, y_te = train_test_split(X_res, y_res, test_size=<span class="nu">0.2</span>, random_state=<span class="nu">42</span>, stratify=y_res)
+      </code></pre>
+    </div>
+  </section>
+
+  <p class="lead" style="margin-top:12px">
+    All images are loaded from <code>/public</code>. Click any to view full size in a new tab.
+  </p>
+</div>
+
+<!-- Copy button for the code block -->
+<script>
+  document.querySelectorAll('.copy').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const target = document.querySelector(btn.dataset.target);
+      if (!target) return;
+      const text = target.innerText.replace(/\u00A0/g,' ');
+      navigator.clipboard.writeText(text).then(()=>{
+        btn.textContent = 'Copied!';
+        setTimeout(()=>btn.textContent='Copy', 1200);
+      });
+    });
+  });
+</script>
+</body>
+</html>
