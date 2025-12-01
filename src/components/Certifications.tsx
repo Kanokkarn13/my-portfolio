@@ -23,8 +23,8 @@ export default function Certifications() {
 
                 <div className="grid">
                     {/* Oracle HCM */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/HCMcert.jpg', 'Oracle Fusion Cloud HCM Foundations Associate')}>
-                        <img src="/my-portfolio/HCMcert.jpg" alt="Oracle HCM Foundations Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/HCMcert.jpg', 'Oracle Fusion Cloud HCM Foundations Associate')}>
+                        <img src="/HCMcert.jpg" alt="Oracle HCM Foundations Certificate" />
                         <div className="tile-body">
                             <h3>Oracle Fusion Cloud HCM Foundations Associate</h3>
                             <p>Issued May 2025 · Oracle University</p>
@@ -32,8 +32,8 @@ export default function Certifications() {
                     </div>
 
                     {/* Oracle SCM */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/SCMcert.jpg', 'Oracle Fusion Cloud SCM Foundations Associate')}>
-                        <img src="/my-portfolio/SCMcert.jpg" alt="Oracle SCM Foundations Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/SCMcert.jpg', 'Oracle Fusion Cloud SCM Foundations Associate')}>
+                        <img src="/SCMcert.jpg" alt="Oracle SCM Foundations Certificate" />
                         <div className="tile-body">
                             <h3>Oracle Fusion Cloud SCM Foundations Associate</h3>
                             <p>Issued May 2025 · Oracle University</p>
@@ -41,8 +41,8 @@ export default function Certifications() {
                     </div>
 
                     {/* Oracle ERP */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/ERPcert.jpg', 'Oracle ERP Foundations Certificate')}>
-                        <img src="/my-portfolio/ERPcert.jpg" alt="Oracle ERP Foundations Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/ERPcert.jpg', 'Oracle ERP Foundations Certificate')}>
+                        <img src="/ERPcert.jpg" alt="Oracle ERP Foundations Certificate" />
                         <div className="tile-body">
                             <h3>Oracle Fusion Cloud ERP Foundations Associate</h3>
                             <p>Issued May 2025 · Oracle University</p>
@@ -50,8 +50,8 @@ export default function Certifications() {
                     </div>
 
                     {/* Oracle CX */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/CXcert.jpg', 'Oracle CX Foundations Certificate')}>
-                        <img src="/my-portfolio/CXcert.jpg" alt="Oracle CX Foundations Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/CXcert.jpg', 'Oracle CX Foundations Certificate')}>
+                        <img src="/CXcert.jpg" alt="Oracle CX Foundations Certificate" />
                         <div className="tile-body">
                             <h3>Oracle Fusion Cloud CX Foundations Associate</h3>
                             <p>Issued May 2025 · Oracle University</p>
@@ -59,8 +59,8 @@ export default function Certifications() {
                     </div>
 
                     {/* Python Chatbot */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/PythonCert.jpg', 'Coursera Chatbot with Python Certificate')}>
-                        <img src="/my-portfolio/PythonCert.jpg" alt="Coursera Chatbot with Python Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/PythonCert.jpg', 'Coursera Chatbot with Python Certificate')}>
+                        <img src="/PythonCert.jpg" alt="Coursera Chatbot with Python Certificate" />
                         <div className="tile-body">
                             <h3>Customer Service with Python: Build a Chatbot using ChatGPT</h3>
                             <p>Issued Feb 2025 · Coursera Project Network</p>
@@ -68,8 +68,8 @@ export default function Certifications() {
                     </div>
 
                     {/* Storytelling */}
-                    <div className="tile" onClick={() => openLightbox('/my-portfolio/Storytelling.jpg', 'Coursera Data Storytelling Certificate')}>
-                        <img src="/my-portfolio/Storytelling.jpg" alt="Coursera Data Storytelling Certificate" />
+                    <div className="tile" onClick={() => openLightbox('/Storytelling.jpg', 'Coursera Data Storytelling Certificate')}>
+                        <img src="/Storytelling.jpg" alt="Coursera Data Storytelling Certificate" />
                         <div className="tile-body">
                             <h3>Generative AI for Data Visualization and Storytelling</h3>
                             <p>Issued Feb 2025 · Coursera Instructor Network</p>

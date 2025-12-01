@@ -59,7 +59,7 @@ export default function Header() {
                 </div>
 
                 <figure className="pfp-card">
-                    <img src="/my-portfolio/buki.jpg" alt="Kanokkarn Muangjun pfp" />
+                    <img src="/buki.jpg" alt="Kanokkarn Muangjun pfp" />
                 </figure>
             </div>
         </header>

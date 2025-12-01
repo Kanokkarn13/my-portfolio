@@ -38,7 +38,7 @@ function Home() {
 
 function App() {
   return (
-    <Router basename="/my-portfolio">
+    <Router>
       <ScrollToHash />
       <Routes>
         <Route path="/" element={<Home />} />
