@@ -948,7 +948,12 @@ h3 {
 
   /* Hero adjustments for smaller screens */
   .logo-title {
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .logo-title .sub {
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -978,6 +983,7 @@ h3 {
   padding: 0;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   box-shadow: 4px 4px 0 var(--ink)
 }
 

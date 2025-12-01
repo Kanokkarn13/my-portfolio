@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { PROJECTS } from '../data/projects';
 import { useEffect } from 'react';
 import CarbonProject from './CarbonProject';
+import SavingsProject from './SavingsProject';
 
 export default function ProjectDetail() {
     const { id } = useParams<{ id: string }>();
@@ -22,6 +23,10 @@ export default function ProjectDetail() {
 
     if (project.id === 'carbon-footprint-tracker') {
         return <CarbonProject project={project} />;
+    }
+
+    if (project.id === 'savings-account-opening-insights') {
+        return <SavingsProject project={project} />;
     }
 
     return (

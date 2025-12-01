@@ -8,7 +8,7 @@ export default function Header() {
 
     return (
         <header id="home" className="hero full-screen">
-            <div className="nav">
+            <div className={`nav ${isNavOpen ? 'is-open' : ''}`}>
                 <a href="#home" className="brand" onClick={closeNav}>KANOKKARN</a>
 
                 <button
